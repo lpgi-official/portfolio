@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LPGI | Web Developer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { 
+            font-family: 'Plus Jakarta Sans', sans-serif; 
+        }
+
+        /* Subtle Noise Overlay for Texture */
+        .bg-noise {
+            background-image: radial-gradient(rgba(15, 23, 42, 0.04) 1px, transparent 0);
+            background-size: 16px 16px;
+        }
+
+        /* Diagonal Stripe Pattern Texture */
+        .bg-stripes {
+            background-image: repeating-linear-gradient(
+                -45deg,
+                rgba(241, 245, 249, 0.6),
+                rgba(241, 245, 249, 0.6) 8px,
+                rgba(255, 255, 255, 0.8) 8px,
+                rgba(255, 255, 255, 0.8) 16px
+            );
+        }
+
+        /* Dotted Grid Pattern Texture */
+        .bg-dots {
+            background-image: radial-gradient(#cbd5e1 1.2px, transparent 1.2px);
+            background-size: 12px 12px;
+        }
+
+        /* Interactive Card Lift Animation */
+        .card-texture {
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .card-texture:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px -6px rgba(15, 23, 42, 0.08);
+        }
+
+        /* Floating Animation */
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-6px); }
+        }
+        .animate-float {
+            animation: float 5s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body class="bg-slate-100 text-slate-800 antialiased min-h-screen pb-16 bg-noise">
+
+    <!-- Top Bar -->
+    <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-300/80 shadow-sm">
+        <div class="max-w-4xl mx-auto px-6 h-16 flex justify-between items-center">
+            <div class="font-bold text-xl text-slate-900 flex items-center gap-2">
+                <span class="w-2.5 h-2.5 rounded-full bg-blue-600 animate-pulse"></span>
+                LPGI
+            </div>
+            <a href="mailto:lpgiofficial088@gmail.com" class="text-sm font-medium text-blue-700 hover:text-blue-800 bg-blue-50/90 hover:bg-blue-100 border border-blue-200/80 px-4 py-2 rounded-full transition-all shadow-xs">
+                lpgiofficial088@gmail.com
+            </a>
+        </div>
+    </header>
+
+    <main class="max-w-3xl mx-auto px-6 pt-12 space-y-12">
+
+        <!-- Simple Intro with Subtle Textured Card -->
+        <section class="bg-white/80 border border-slate-200/90 p-8 rounded-3xl shadow-sm bg-dots space-y-4">
+            <div class="inline-block px-3 py-1 rounded-full bg-slate-200/80 text-slate-800 text-xs font-semibold border border-slate-300/60">
+                Web Developer
+            </div>
+            <h1 class="text-3xl sm:text-5xl font-bold text-slate-900 tracking-tight leading-tight">
+                Hey, I build simple, fast, and useful websites.
+            </h1>
+            <p class="text-slate-600 text-base sm:text-lg leading-relaxed">
+                If you need a website that works smooth and looks clean, I can build it for you. Here are a few interactive features I made right on this page so you can see how things work.
+            </p>
+        </section>
+
+        <!-- Interactive Features -->
+        <section class="space-y-6">
+            <h2 class="text-xl font-bold text-slate-900 flex items-center gap-2">
+                <span>Try these out</span>
+                <span class="text-xs font-normal text-slate-500">(Interactive Demos)</span>
+            </h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+                <!-- Feature 1: Theme Switcher -->
+                <div id="themeCard" class="bg-white border border-slate-300/70 p-6 rounded-2xl shadow-sm card-texture space-y-4">
+                    <div class="flex justify-between items-center">
+                        <span class="text-xs font-bold uppercase tracking-wide text-slate-400">Feature 1</span>
+                        <span class="text-xs bg-slate-100 border border-slate-200 text-slate-700 px-2 py-1 rounded font-mono">UI States</span>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-900">Color & Texture Switcher</h3>
+                    <p class="text-sm text-slate-600">Click the button to switch background styles and patterns instantly without reloads.</p>
+                    <button onclick="changeTheme()" class="w-full py-2.5 bg-slate-900 hover:bg-slate-800 text-white font-medium text-sm rounded-xl transition-all shadow-sm">
+                        Change Box Style
+                    </button>
+                </div>
+
+                <!-- Feature 2: Time Calculator -->
+                <div class="bg-white border border-slate-300/70 p-6 rounded-2xl shadow-sm card-texture space-y-4">
+                    <div class="flex justify-between items-center">
+                        <span class="text-xs font-bold uppercase tracking-wide text-slate-400">Feature 2</span>
+                        <span class="text-xs bg-slate-100 border border-slate-200 text-slate-700 px-2 py-1 rounded font-mono">Logic</span>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-900">Project Timeline Estimator</h3>
+                    <p class="text-sm text-slate-600">Move the slider to see how project size changes the build time and setup.</p>
+                    
+                    <div class="space-y-3 pt-1">
+                        <input type="range" id="pageSlider" min="1" max="10" value="3" oninput="updateEstimate()" class="w-full accent-blue-600 bg-slate-200 rounded-lg cursor-pointer">
+                        <div class="flex justify-between text-xs font-semibold text-slate-700">
+                            <span>Pages: <span id="pageVal" class="text-blue-600">3</span></span>
+                            <span>Est. Time: <span id="timeVal" class="text-blue-600">3-5 Days</span></span>
+                        </div>
+                    </div>
+                    <div id="stackSuggest" class="text-xs bg-slate-50 border border-slate-200 p-3 rounded-lg text-slate-600 font-mono">
+                        Setup: Clean HTML + CSS + JavaScript
+                    </div>
+                </div>
+
+                <!-- Feature 3: API Data Fetcher -->
+                <div class="bg-white border border-slate-300/70 p-6 rounded-2xl shadow-sm card-texture space-y-4 md:col-span-2">
+                    <div class="flex justify-between items-center">
+                        <span class="text-xs font-bold uppercase tracking-wide text-slate-400">Feature 3</span>
+                        <span class="text-xs bg-slate-100 border border-slate-200 text-slate-700 px-2 py-1 rounded font-mono">Live Data API</span>
+                    </div>
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                        <div>
+                            <h3 class="text-lg font-bold text-slate-900">Live Data Fetcher</h3>
+                            <p class="text-sm text-slate-600">Pulls random advice from an open API in real time when you click.</p>
+                        </div>
+                        <button onclick="fetchAdvice()" class="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white font-medium text-sm rounded-xl transition-all shadow-sm whitespace-nowrap">
+                            Fetch New Quote
+                        </button>
+                    </div>
+                    <div class="bg-slate-50/90 p-4 rounded-xl border border-slate-200 font-mono text-sm min-h-[3.5rem] flex items-center justify-center text-center text-slate-700">
+                        <span id="quoteText">Click the button to load live data.</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Textured Callout Banner -->
+        <section class="bg-white border-2 border-blue-200 p-6 sm:p-8 rounded-3xl animate-float shadow-md bg-stripes flex flex-col sm:flex-row items-center justify-between gap-6">
+            <div class="bg-white/90 p-3 rounded-2xl backdrop-blur-xs">
+                <h3 class="text-xl font-bold text-slate-900">Want to work together?</h3>
+                <p class="text-sm text-slate-600 mt-1">Send me an email with what you need, and I'll get back to you fast.</p>
+            </div>
+            <a href="mailto:lpgiofficial088@gmail.com" class="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold text-sm rounded-xl transition-all whitespace-nowrap shadow-md">
+                lpgiofficial088@gmail.com
+            </a>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="mt-16 text-center text-xs text-slate-400">
+        <p>© 2026 LPGI. Built simply and cleanly.</p>
+    </footer>
+
+    <!-- JavaScript Functions -->
+    <script>
+        // Feature 1: Style & Texture Switcher
+        function changeTheme() {
+            const card = document.getElementById('themeCard');
+            const styles = [
+                'bg-blue-50/80 border-blue-300 bg-dots',
+                'bg-amber-50/80 border-amber-300 bg-stripes',
+                'bg-emerald-50/80 border-emerald-300',
+                'bg-slate-100 border-slate-300 bg-dots',
+                'bg-white border-slate-300/70'
+            ];
+            
+            const currentStyle = styles.find(s => card.className.includes(s)) || 'bg-white border-slate-300/70';
+            const remainingStyles = styles.filter(s => s !== currentStyle);
+            const nextStyle = remainingStyles[Math.floor(Math.random() * remainingStyles.length)];
+            
+            card.className = `p-6 rounded-2xl shadow-sm card-texture space-y-4 transition-all duration-300 ${nextStyle}`;
+        }
+
+        // Feature 2: Time Calculator
+        function updateEstimate() {
+            const val = document.getElementById('pageSlider').value;
+            document.getElementById('pageVal').innerText = val;
+            
+            const timeVal = document.getElementById('timeVal');
+            const stackSuggest = document.getElementById('stackSuggest');
+
+            if (val <= 3) {
+                timeVal.innerText = '2-4 Days';
+                stackSuggest.innerText = 'Setup: Clean HTML + CSS + JavaScript';
+            } else if (val <= 6) {
+                timeVal.innerText = '1-2 Weeks';
+                stackSuggest.innerText = 'Setup: React / Next.js + Easy Content Manager';
+            } else {
+                timeVal.innerText = '2-3 Weeks';
+                stackSuggest.innerText = 'Setup: Full Web App + Database & Custom Backend';
+            }
+        }
+
+        // Feature 3: API Fetcher
+        async function fetchAdvice() {
+            const quoteText = document.getElementById('quoteText');
+            quoteText.innerText = 'Loading...';
+            try {
+                const res = await fetch('https://api.adviceslip.com/advice');
+                const data = await res.json();
+                quoteText.innerText = `"${data.slip.advice}"`;
+            } catch (err) {
+                quoteText.innerText = '"Keep code simple and easy to read."';
+            }
+        }
+    </script>
+</body>
+</html>

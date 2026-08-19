@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forum Business Centre | Bhatagaon Premier Commercial Hub</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans antialiased">
+
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <div class="flex items-center space-x-3">
+                    <i class="fa-solid fa-building-user text-3xl text-blue-600"></i>
+                    <div>
+                        <span class="text-xl font-bold text-gray-900 block leading-none">Forum Business Centre</span>
+                        <span class="text-xs text-gray-500">Bhatagaon</span>
+                    </div>
+                </div>
+                <div class="hidden md:flex space-x-8 items-center font-medium">
+                    <a href="#about" class="hover:text-blue-600 transition">About</a>
+                    <a href="#tenants" class="hover:text-blue-600 transition">Directory</a>
+                    <a href="#location" class="hover:text-blue-600 transition">Location</a>
+                    <a href="#contact" class="bg-blue-600 text-white px-5 py-2.5 rounded-lg hover:bg-blue-700 transition">Get Directions</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative bg-gradient-to-r from-slate-900 via-blue-900 to-slate-900 text-white py-24 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto text-center">
+            <span class="inline-block bg-blue-500/20 text-blue-300 text-sm font-semibold px-4 py-1.5 rounded-full mb-4 border border-blue-400/30">
+                <i class="fa-regular fa-clock mr-1"></i> Open 24 Hours
+            </span>
+            <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight mb-6">
+                Bhatagaon's Premier Commercial & Business Hub
+            </h1>
+            <p class="text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto mb-10">
+                Home to top-tier electronics retail, corporate financial institutions, and dining options. Built to drive business and offer seamless convenience.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#tenants" class="bg-blue-600 text-white px-8 py-3.5 rounded-lg font-semibold hover:bg-blue-700 transition shadow-lg">
+                    Explore Directory
+                </a>
+                <a href="#location" class="bg-white/10 backdrop-blur-md text-white border border-white/20 px-8 py-3.5 rounded-lg font-semibold hover:bg-white/20 transition">
+                    View Map Location
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rating & Overview Bar -->
+    <section class="bg-white border-b border-gray-200 py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+                <div class="p-4">
+                    <div class="flex justify-center items-center text-yellow-400 text-2xl mb-1">
+                        <i class="fa-solid fa-star"></i>
+                        <span class="text-gray-900 font-bold ml-2 text-2xl">4.0 / 5.0</span>
+                    </div>
+                    <p class="text-sm text-gray-500">Google Business Rating</p>
+                </div>
+                <div class="p-4 border-t md:border-t-0 md:border-l border-gray-200">
+                    <div class="text-2xl font-bold text-gray-900 mb-1">24/7 Access</div>
+                    <p class="text-sm text-gray-500">Open & Accessible Round the Clock</p>
+                </div>
+                <div class="p-4 border-t md:border-t-0 md:border-l border-gray-200">
+                    <div class="text-2xl font-bold text-gray-900 mb-1">Multi-Floor Hub</div>
+                    <p class="text-sm text-gray-500">Retail, Dining & Financial Services</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tenants Directory Section -->
+    <section id="tenants" class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="mb-10 text-center">
+            <h2 class="text-3xl font-bold text-gray-900 mb-2">Businesses At Forum Business Centre</h2>
+            <p class="text-gray-600">Discover key anchor tenants and services located on premises.</p>
+        </div>
+
+        <div class="overflow-x-auto bg-white rounded-xl shadow-sm border border-gray-200">
+            <table class="w-full text-left border-collapse">
+                <thead>
+                    <tr class="bg-gray-100/70 border-b border-gray-200 text-gray-700 uppercase text-xs tracking-wider">
+                        <th class="p-4">Business Name</th>
+                        <th class="p-4">Category</th>
+                        <th class="p-4">Floor Location</th>
+                        <th class="p-4">Business Hours</th>
+                        <th class="p-4">Rating</th>
+                    </tr>
+                </thead>
+                <tbody class="divide-y divide-gray-200 text-sm">
+                    <tr class="hover:bg-gray-50/80 transition">
+                        <td class="p-4 font-semibold text-gray-900 flex items-center gap-2">
+                            <i class="fa-solid fa-laptop text-blue-600"></i> Croma - Bhatagaon
+                        </td>
+                        <td class="p-4 text-gray-600">Electronics Retail & Repair</td>
+                        <td class="p-4 text-gray-600">Floor 1</td>
+                        <td class="p-4 text-gray-600"><span class="text-green-600 font-medium">Open</span> · Closes 9:30 PM</td>
+                        <td class="p-4 font-medium text-gray-900">⭐ 4.8 <span class="text-xs text-gray-500">(4,074)</span></td>
+                    </tr>
+                    <tr class="hover:bg-gray-50/80 transition">
+                        <td class="p-4 font-semibold text-gray-900 flex items-center gap-2">
+                            <i class="fa-solid fa-pizza-slice text-red-500"></i> Domino's Pizza
+                        </td>
+                        <td class="p-4 text-gray-600">Pizza Restaurant & Delivery</td>
+                        <td class="p-4 text-gray-600">Floor 0</td>
+                        <td class="p-4 text-gray-600"><span class="text-green-600 font-medium">Open</span> · Closes 11:00 PM</td>
+                        <td class="p-4 font-medium text-gray-900">⭐ 3.7 <span class="text-xs text-gray-500">(157)</span></td>
+                    </tr>
+                    <tr class="hover:bg-gray-50/80 transition">
+                        <td class="p-4 font-semibold text-gray-900 flex items-center gap-2">
+                            <i class="fa-solid fa-building-columns text-emerald-600"></i> HDB Financial Services Ltd
+                        </td>
+                        <td class="p-4 text-gray-600">Financial Institution</td>
+                        <td class="p-4 text-gray-600">Main Complex</td>
+                        <td class="p-4 text-gray-600"><span class="text-green-600 font-medium">Open</span> · Closes 6:30 PM</td>
+                        <td class="p-4 font-medium text-gray-900">⭐ 4.9 <span class="text-xs text-gray-500">(196)</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- Location & Contact Section -->
+    <section id="location" class="bg-gray-100 py-16 border-t border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+                <h2 class="text-3xl font-bold text-gray-900 mb-6">Visit Forum Business Centre</h2>
+                <div class="space-y-4">
+                    <div class="flex items-start gap-4">
+                        <i class="fa-solid fa-location-dot text-blue-600 text-xl mt-1"></i>
+                        <div>
+                            <h3 class="font-semibold text-gray-900">Address</h3>
+                            <p class="text-gray-600">Forum Business Centre, Bhatagaon, Raipur, Chhattisgarh</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <i class="fa-solid fa-clock text-blue-600 text-xl mt-1"></i>
+                        <div>
+                            <h3 class="font-semibold text-gray-900">Operating Hours</h3>
+                            <p class="text-gray-600">Open 24 Hours, 7 Days a Week</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <i class="fa-solid fa-phone text-blue-600 text-xl mt-1"></i>
+                        <div>
+                            <h3 class="font-semibold text-gray-900">Leasing & Inquiries</h3>
+                            <p class="text-gray-600">Contact property management for office or retail space availability.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Map Card Placeholder -->
+            <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-200 text-center">
+                <i class="fa-solid fa-map-location-dot text-5xl text-blue-600 mb-4"></i>
+                <h3 class="text-xl font-bold text-gray-900 mb-2">Find Us on Google Maps</h3>
+                <p class="text-gray-600 text-sm mb-6">Get turn-by-turn navigation directly to Bhatagaon's business hub.</p>
+                <a href="https://maps.google.com" target="_blank" class="inline-block w-full bg-blue-600 text-white font-medium py-3 rounded-lg hover:bg-blue-700 transition">
+                    Open in Google Maps
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-gray-400 py-8 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 text-center text-sm">
+            <p>&copy; Forum Business Centre, Bhatagaon. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
